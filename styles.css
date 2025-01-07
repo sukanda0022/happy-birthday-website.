@@ -1,0 +1,193 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Card Styling */
+  .birthday-card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 50px 30px;
+    position: relative;
+    overflow: hidden;
+    max-width: 400px;
+  }
+  
+  .card-content h1 {
+    font-size: 2.5rem;
+    color: #ff6f91;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-content p {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 20px 0;
+  }
+  
+/* Button Styling */
+.celebrate-btn {
+    background: linear-gradient(90deg, #ff758c, #ff9a44, #ffc371);
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    padding: 20px 40px; /* Increased padding for a bigger button */
+    font-size: 2.1rem; /* Larger font size */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: pulse 1.5s infinite;
+}
+
+.celebrate-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 117, 140, 0.5);
+}
+
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  /* Balloons */
+  .balloons {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+/* Balloons */
+.balloon {
+    width: 30px; /* Reduced width */
+    height: 50px; /* Reduced height */
+    background: radial-gradient(circle, #ff6f91, #ff3e75);
+    border-radius: 50%;
+    margin: 0 5px; /* Reduced margin for better spacing */
+    animation: float 4s ease-in-out infinite;
+    position: relative;
+    display: inline-block;
+}
+
+.balloon::after {
+    content: "";
+    position: absolute;
+    bottom: -15px; /* Adjusted string position */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px; /* Shorter string */
+    background: #888;
+}
+
+  
+  .balloon:nth-child(2) {
+    background: radial-gradient(circle, #6f91ff, #3e75ff);
+    animation-delay: 1s;
+  }
+  
+  .balloon:nth-child(3) {
+    background: radial-gradient(circle, #6fff91, #3eff75);
+    animation-delay: 2s;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-10px) translateY(-20px);
+    }
+  }
+  
+  /* Confetti Effect */
+  .confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.3) 80%);
+    background-image: repeating-linear-gradient(45deg, #ff3e75, #ff3e75 10px, #ffd700 10px, #ffd700 20px);
+    background-size: 400%;
+    animation: confettiFall 5s linear infinite;
+    z-index: -1;
+  }
+  
+  @keyframes confettiFall {
+    from {
+      background-position: 0 -200%;
+    }
+    to {
+      background-position: 0 200%;
+    }
+  }
+  
+/* Full-Screen Message */
+#message {
+    position: fixed; /* Full screen */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjust size */
+    max-width: 600px; /* Optional max width */
+    text-align: center;
+    font-size: 2.5rem; /* Scales with screen size */
+    font-weight: bold;
+    color: #ff6f91;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: none;
+    animation: pop 0.5s ease-in-out;
+  }
+  
+  .message-photo {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (min-width: 768px) {
+    #message {
+      font-size: 3rem; /* Larger on bigger screens */
+    }
+  
+    .message-photo {
+      max-width: 400px; /* Larger photo for bigger screens */
+    }
+  }
+  
+  @keyframes pop {
+    from {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+  
+  
+  .hidden {
+    display: none;
+  }
+  
