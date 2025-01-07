@@ -34,23 +34,24 @@ body {
     margin: 20px 0;
   }
   
-  /* Button Styling */
-  .celebrate-btn {
+/* Button Styling */
+.celebrate-btn {
     background: linear-gradient(90deg, #ff758c, #ff9a44, #ffc371);
     border: none;
     border-radius: 30px;
     color: #fff;
-    padding: 12px 25px;
-    font-size: 1.1rem;
+    padding: 20px 40px; /* Increased padding for a bigger button */
+    font-size: 2.1rem; /* Larger font size */
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: pulse 1.5s infinite;
-  }
-  
-  .celebrate-btn:hover {
+}
+
+.celebrate-btn:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(255, 117, 140, 0.5);
-  }
+}
+
   
   @keyframes pulse {
     0%, 100% {
@@ -69,27 +70,29 @@ body {
     transform: translateX(-50%);
   }
   
-  .balloon {
-    width: 50px;
-    height: 70px;
+/* Balloons */
+.balloon {
+    width: 30px; /* Reduced width */
+    height: 50px; /* Reduced height */
     background: radial-gradient(circle, #ff6f91, #ff3e75);
     border-radius: 50%;
-    margin: 0 10px;
+    margin: 0 5px; /* Reduced margin for better spacing */
     animation: float 4s ease-in-out infinite;
     position: relative;
     display: inline-block;
-  }
-  
-  .balloon::after {
+}
+
+.balloon::after {
     content: "";
     position: absolute;
-    bottom: -20px;
+    bottom: -15px; /* Adjusted string position */
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
-    height: 30px;
+    height: 20px; /* Shorter string */
     background: #888;
-  }
+}
+
   
   .balloon:nth-child(2) {
     background: radial-gradient(circle, #6f91ff, #3e75ff);
